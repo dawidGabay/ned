@@ -1,3 +1,11 @@
+# To use stanford NER:
+#1. Download stanford-ner package https://nlp.stanford.edu/software/CRF-NER.shtml#Download
+#2. Download nltk_data. Run:
+#                    import nltk
+#                    nltk.download()
+#                    then select relevant package - punkt
+# 3. set enviorment variable JAVAHOME to the location of the java file
+
 from nltk.tag import StanfordNERTagger
 from nltk.tokenize import word_tokenize
 import io
