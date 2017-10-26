@@ -1,0 +1,26 @@
+NER
+
+To use stanford NER:
+1. Download stanford-ner package https://nlp.stanford.edu/software/CRF-NER.shtml#Download
+2. Download nltk_data. Run:
+                    import nltk
+                    nltk.download()
+                    then selecting relevant package - punkt
+3. set enviorment variable JAVAHOME to the location of the java file
+
+Running example:
+
+from nltk.tag import StanfordNERTagger
+from nltk.tokenize import word_tokenize
+
+
+st = StanfordNERTagger('C:\\nlp_lab\code\external_code\stanford-ner-2017-06-09\classifiers\english.all.3class.distsim.crf.ser.gz',
+					   'C:\\nlp_lab\code\external_code\stanford-ner-2017-06-09\stanford-ner.jar',
+					   encoding='utf-8')
+
+text = 'John Poland  from Wales used to work for Delta Airlines.'
+tokenized_text = word_tokenize(text)
+classified_text = st.tag(tokenized_text)
+
+print(classified_text)
+-> [('John', 'PERSON'), ('Poland', 'PERSON'), ('from', 'O'), ('Wales', 'LOCATION'), ('used', 'O'), ('to', 'O'), ('work', 'O'), ('for', 'O'), ('Delta', 'ORGANIZATION'), ('Airlines', 'ORGANIZATION'), ('.', 'O')]
