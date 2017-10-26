@@ -5,7 +5,7 @@ To use stanford NER:
 2. Download nltk_data. Run:
                     import nltk
                     nltk.download()
-                    then selecting relevant package - punkt
+                    then select relevant package - punkt
 3. set enviorment variable JAVAHOME to the location of the java file
 
 Running example:
